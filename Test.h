@@ -14,19 +14,37 @@ using namespace std;
 class Test
 {
 public:
-    /** constructor
-     * @param q a reference to a Queue object.
-     * @post sets m_queue to refer to q.
-     */
-    Test(Queue<int>& q);
-    
-    /**
-     *
-     */
-    void runTests();
+	/** Constructor
+	 * @post initializes m_size to 0.
+	 */
+	Test();
+
+	/** Runs all tests.
+	 * @post prints the results of all tests.
+	 */
+	void runTests();
 
 private:
-    Queue<int>& m_queue;
+	Queue<int> m_queue;	// the queue being tested.
+	int m_size;	// size of the queue.
+
+	/** Tests whether the queue was constructed properly: if the queue's pointers exist, and the queue is empty.
+	 * @return true if the queue was constructed properly, else false.
+	 */
+	bool testConstruction() const;
+
+	/** Tests the Queue's isEmpty() method.
+	 * @return true if
+	 */
+	bool testIsEmpty() const;
+
+	bool testEnqueue();
+
+	bool testDequeue();
+
+	bool testPeekFront() const;
+
+
 };
 
 #endif
