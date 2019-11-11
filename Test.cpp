@@ -20,4 +20,21 @@ void Test::runTests()
 bool Test::testConstruction() const
 {
 
+// -------- PRINTING HELPER METHODS -------- //
+void Test::printTestHeader(string title, string descrip) const
+{
+	cout << title << ": " << descrip << ": ";
+	return;
+}
+
+void Test::printTestResult(bool isPassed) const
+{
+	if(isPassed)
+	{
+		cout << "PASSED\n";
+	}
+	else
+	{
+		cout << "FAILED\n";
+	}
 }

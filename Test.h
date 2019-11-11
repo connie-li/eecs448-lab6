@@ -44,7 +44,19 @@ private:
 
 	bool testPeekFront() const;
 
+	// -------- PRINTING HELPER METHODS -------- //
+	/** Prints a header for the current test with the test title and the given description.
+	 * @param title the title of the current test.
+	 * @param descrip a description of the current test.
+	 * @post prints the given information.
+	 */
+	void printTestHeader(string title, string descrip) const;
 
+	/** Prints the result of the test, "PASSED" or "FAILED".
+	 * @param isPassed true if the test is passed, else false.
+	 * @post prints PASSED or FAILED based on the value of isPassed.
+	 */
+	void printTestResult(bool isPassed) const;
 };
 
 #endif
