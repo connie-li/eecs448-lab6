@@ -29,19 +29,28 @@ private:
 	int m_size;	// size of the queue.
 
 	/** Tests whether the queue was constructed properly: if the queue's pointers exist, and the queue is empty.
-	 * @return true if the queue was constructed properly, else false.
+	 * @return true if all subtests are passed, else false.
 	 */
 	bool testConstruction() const;
 
-	/** Tests the Queue's isEmpty() method.
-	 * @return true if
+	/** Tests the Queue's isEmpty() method: returns the correct value when the queue is empty or not empty.
+	 * @return true if all subtests are passed, else false.
 	 */
 	bool testIsEmpty() const;
 
+	/** Tests the Queue's enqueue() method: Node is added to the back of the queue, Node added contains the correct data.
+	 * @return true if a Node was added, else false.
+	 */
 	bool testEnqueue();
 
+	/** Tests the Queue's dequeue() method: behavior when the queue is empty, behavior when the queue is not empty; successful removal of the Node at the front.
+	 * @return true if all subtests are passed, else false.
+	 */
 	bool testDequeue();
 
+	/** Tests the Queue's peekFront() method: behavior when the queue is empty, behavior when the queue is not empty, the queue is unchanged, the value at the front is returned correctly.
+	 * @return true if all subtests are passed, else false.
+	 */
 	bool testPeekFront() const;
 
 	// -------- PRINTING HELPER METHODS -------- //
