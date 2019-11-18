@@ -103,8 +103,24 @@ int Test::testPeekEmpty() const
 
 	return(result);
 }
-{
 
+bool Test::testPeekNotEmpty() const
+{
+	srand(time(NULL));
+	Queue q;
+	int randVal = rand() % 100 - 50;
+	q.enqueue(randVal);
+	int frontVal = 0;
+	try
+	{
+		frontVal = q.peekFront();
+	}
+	catch(...)
+	{
+		printError("peekFront");
+	}
+
+	return(randVal == frontVal);
 }
 
 // -------- PRINTING HELPER METHODS -------- //
