@@ -57,8 +57,12 @@ private:
 	 * @return 1 if a std::runtime_error is thrown, 2 if some other kind of error is thrown, or 3 if no error is thrown.
 	 */
 	bool testDeQEmpty();
+
+	/** Tests the behavior of dequeue() when the queue is not empty. Creates a new Queue and adds one item, then tests dequeue().
+	 * @pre Assume that enqueue properly adds one item; assume that isEmpty() works properly.
+	 * @return true if the item is successfully removed, else false.
 	 */
-	bool testDequeue();
+	bool testDeQRemove1();
 
 	/** Tests the behavior of peekFront() when the queue is empty.
 	 * @pre Assume that isEmpty() works correctly.

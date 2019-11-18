@@ -109,8 +109,22 @@ bool Test::testDeQEmpty()
 
 	return(result);
 }
-{
 
+bool Test::testDeQRemove1()
+{
+	srand(time(NULL));
+	Queue q;
+	q.enqueue(rand() % 100 - 50);
+	try
+	{
+		q.dequeue();
+	}
+	catch(...)
+	{
+		printError("dequeue");
+	}
+
+	return(q.isEmpty());
 }
 
 int Test::testPeekEmpty() const
