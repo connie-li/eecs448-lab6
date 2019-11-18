@@ -52,8 +52,11 @@ private:
 	 */
 	bool testEnQBack();
 
-	/** Tests the Queue's dequeue() method: behavior when the queue is empty, behavior when the queue is not empty; successful removal of the Node at the front.
-	 * @return true if all subtests are passed, else false.
+	/** Tests the behavior of dequeue() when the queue is empty. Creates a new Queue and attempts to dequeue from it.
+	 * @pre Assume that Queues are properly created (ie, empty).
+	 * @return 1 if a std::runtime_error is thrown, 2 if some other kind of error is thrown, or 3 if no error is thrown.
+	 */
+	bool testDeQEmpty();
 	 */
 	bool testDequeue();
 

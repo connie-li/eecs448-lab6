@@ -90,7 +90,25 @@ bool Test::testEnQBack()
 	return(frontCorrect);
 }
 
-bool Test::testDequeue()
+bool Test::testDeQEmpty()
+{
+	Queue q;
+	int result = 3;
+	try
+	{
+		q.dequeue();
+	}
+	catch(runtime_error& e)
+	{
+		result = 1;
+	}
+	catch(...)
+	{
+		result = 2;
+	}
+
+	return(result);
+}
 {
 
 }
