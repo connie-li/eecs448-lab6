@@ -2,3 +2,4 @@ BUGS LIST
 
 - dequeue's documentation says that it should return "The value of the entry at the front of the queue", however this is not possible because it is a void function.
 - enqueue always adds to the front instead of the back.
+- memory leaks exist and all trace back to enqueue(): most likely the destructor is not implemented properly.

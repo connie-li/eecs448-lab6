@@ -1,0 +1,68 @@
+c817l905@cycle3:~/eecs448/l6-test$ valgrind --leak-check=full ./QueueTest
+==18856== Memcheck, a memory error detector
+==18856== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==18856== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==18856== Command: ./QueueTest
+==18856==
+Test dequeue() #1: dequeueing from an empty queue: PASSED
+Test isEmpty() #1: new Queue evaluates as empty: PASSED
+Test peekFront() #1: peek when queue is empty: PASSED
+Test enqueue() #1: entry value added correctly: PASSED
+Test peekFront() #2: peek when queue contains 1 item: PASSED
+Test enqueue() #2: items always added to back: FAILED
+Test isEmpty() #2: Queue containing 1 item: PASSED
+Test dequeue() #2: removing 1 item: PASSED
+Test dequeue() #3: items always removed from the front: PASSED
+Test enqueue() #3: actual enqueue order:
+        Enqueue called on these values, in this order: 0 1 2 3 4
+        Items in the queue are actually in this order: 4 3 2 1 0
+Test dequeue #4: removing all items: PASSED
+==18856==
+==18856== HEAP SUMMARY:
+==18856==     in use at exit: 192 bytes in 12 blocks
+==18856==   total heap usage: 51 allocs, 39 frees, 74,986 bytes allocated
+==18856==
+==18856== 16 bytes in 1 blocks are definitely lost in loss record 1 of 7
+==18856==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==18856==    by 0x109DEC: Queue::enqueue(int const&) (in /home/c817l905/eecs448/l6-test/QueueTest)
+==18856==    by 0x10ACD4: Test::testEnQEntry() (Test.cpp:73)
+==18856==    by 0x10A368: Test::runTests() (Test.cpp:31)
+==18856==    by 0x109CA8: main (main.cpp:17)
+==18856==
+==18856== 16 bytes in 1 blocks are definitely lost in loss record 2 of 7
+==18856==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==18856==    by 0x109DEC: Queue::enqueue(int const&) (in /home/c817l905/eecs448/l6-test/QueueTest)
+==18856==    by 0x10B30A: Test::testPeekNotEmpty() const (Test.cpp:173)
+==18856==    by 0x10A412: Test::runTests() (Test.cpp:34)
+==18856==    by 0x109CA8: main (main.cpp:17)
+==18856==
+==18856== 16 bytes in 1 blocks are definitely lost in loss record 3 of 7
+==18856==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==18856==    by 0x109DEC: Queue::enqueue(int const&) (in /home/c817l905/eecs448/l6-test/QueueTest)
+==18856==    by 0x10AC09: Test::testIsEmpty2() (Test.cpp:64)
+==18856==    by 0x10A566: Test::runTests() (Test.cpp:40)
+==18856==    by 0x109CA8: main (main.cpp:17)
+==18856==
+==18856== 64 (16 direct, 48 indirect) bytes in 1 blocks are definitely lost in loss record 6 of 7
+==18856==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==18856==    by 0x109DEC: Queue::enqueue(int const&) (in /home/c817l905/eecs448/l6-test/QueueTest)
+==18856==    by 0x10B447: Test::testDeQFront() (Test.cpp:192)
+==18856==    by 0x10A6BA: Test::runTests() (Test.cpp:46)
+==18856==    by 0x109CA8: main (main.cpp:17)
+==18856==
+==18856== 80 (16 direct, 64 indirect) bytes in 1 blocks are definitely lost in loss record 7 of 7
+==18856==    at 0x4C3017F: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==18856==    by 0x109DEC: Queue::enqueue(int const&) (in /home/c817l905/eecs448/l6-test/QueueTest)
+==18856==    by 0x10AEA9: Test::testEnQBack() (Test.cpp:95)
+==18856==    by 0x10A4BC: Test::runTests() (Test.cpp:37)
+==18856==    by 0x109CA8: main (main.cpp:17)
+==18856==
+==18856== LEAK SUMMARY:
+==18856==    definitely lost: 80 bytes in 5 blocks
+==18856==    indirectly lost: 112 bytes in 7 blocks
+==18856==      possibly lost: 0 bytes in 0 blocks
+==18856==    still reachable: 0 bytes in 0 blocks
+==18856==         suppressed: 0 bytes in 0 blocks
+==18856==
+==18856== For counts of detected and suppressed errors, rerun with: -v
+==18856== ERROR SUMMARY: 5 errors from 5 contexts (suppressed: 0 from 0)
