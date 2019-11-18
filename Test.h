@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <string>
+#include "Queue.h"
 using namespace std;
 
 class Test
@@ -25,9 +26,6 @@ public:
 	void runTests();
 
 private:
-	Queue<int> m_queue;	// the queue being tested.
-	int m_size;	// size of the queue.
-
 	/** Tests whether the queue was constructed properly: if the queue's pointers exist, and the queue is empty.
 	 * @return true if all subtests are passed, else false.
 	 */
