@@ -1,0 +1,4 @@
+BUGS LIST
+
+- dequeue's documentation says that it should return "The value of the entry at the front of the queue", however this is not possible because it is a void function.
+- 
