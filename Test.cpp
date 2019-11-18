@@ -42,8 +42,14 @@ void Test::runTests()
 	printTestHeader("Test dequeue() #2", "removing 1 item");
 	printTestResult(testDeQRemove1());
 
+	printTestHeader("Test dequeue() #3", "items always removed from the front");
+	printTestResult(testDeQFront());
+
 	printTestHeader("Test enqueue() #3", "actual enqueue order");
 	printEnqueued();
+
+	printTestHeader("Test dequeue #4", "removing all items");
+	printTestResult(testDeQAll());
 }
 
 bool Test::testIsEmpty1() const
