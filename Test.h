@@ -64,6 +64,11 @@ private:
 	 */
 	bool testDeQRemove1();
 
+	/** Tests whether dequeue always deletes the front of the queue.
+	 * @pre (Based on prior tests) assumes that enqueue() adds items to the front; assumes that dequeueing removes an item.
+	 * @return true if the front is deleted, else false.
+	 */
+	bool testDeQFront();
 	/** Tests the behavior of peekFront() when the queue is empty.
 	 * @pre Assume that isEmpty() works correctly.
 	 * @return 1 if a std::runtime_error is thrown, 2 if some other kind of error is thrown, or 3 if no error is thrown.
@@ -77,6 +82,7 @@ private:
 	bool testPeekNotEmpty() const;
 
 	/** Prints values present in a queue to help find enqueue's bug. Creates an example queue, adds values 0 through 4, then prints each value in order from front to back.
+	 * @pre assumes that dequeue() works properly.
 	 * @post prints all values present in the queue.
 	 */
 	void printEnqueued() const;

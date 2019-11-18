@@ -178,6 +178,19 @@ bool Test::testPeekNotEmpty() const
 	return(randVal == frontVal);
 }
 
+bool Test::testDeQFront()
+{
+	Queue q;
+	for(int i = 0; i < 5; i++)
+	{
+		q.enqueue(i);
+	}
+
+	q.dequeue();
+	int front = q.peekFront();
+
+	return(front == 3);
+}
 void Test::printEnqueued() const
 {
 	Queue q;
