@@ -14,14 +14,24 @@ Test::Test()
 
 void Test::runTests()
 {
-	bool prevPassed = false;
-	printTestHeader("Test isEmpty() #1", "does a new Queue evaluate as empty?");
-	prevPassed = testIsEmpty1();
-	printTestResult(prevPassed);
+	printTestHeader("Test isEmpty() #1", "new Queue evaluates as empty");
+	printTestResult(testIsEmpty1());
+
+	printTestHeader("Test peekFront() #1", "peek when queue is empty");
+	int result = testPeekEmpty();
+	printTestResult(result == 1);
+
+	printTestHeader("Test enqueue() #1", "entry value added correctly");
+	printTestResult(testEnQEntry());
+
+	printTestHeader("Test peekFront() #2", "peek when queue contains 1 item");
+	printTestResult(testPeekNotEmpty());
+
+	printTestHeader("Test enqueue() #2", "items always added to back");
+	printTestResult(testEnQBack());
 
 	printTestHeader("Test isEmpty() #2", "Queue containing 1 item");
-	prevPassed = testIsEmpty2();
-	printTestResult(prevPassed);
+	printTestResult(testIsEmpty2());
 }
 
 bool Test::testIsEmpty1() const
