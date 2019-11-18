@@ -175,6 +175,22 @@ bool Test::testPeekNotEmpty() const
 	return(randVal == frontVal);
 }
 
+void Test::printEnqueued() const
+{
+	Queue q;
+	for(int i = 0; i < 5; i++)
+	{
+		q.enqueue(i);
+	}
+
+	for(int i = 0; i < 5; i++)
+	{
+		cout << q.peekFront() << ' ';
+		q.dequeue();
+	}
+	cout << '\n';
+}
+
 // -------- PRINTING HELPER METHODS -------- //
 void Test::printTestHeader(string title, string descrip) const
 {

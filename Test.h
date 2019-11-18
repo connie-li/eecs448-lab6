@@ -76,6 +76,11 @@ private:
 	 */
 	bool testPeekNotEmpty() const;
 
+	/** Prints values present in a queue to help find enqueue's bug. Creates an example queue, adds values 0 through 4, then prints each value in order from front to back.
+	 * @post prints all values present in the queue.
+	 */
+	void printEnqueued() const;
+
 	// -------- PRINTING HELPER METHODS -------- //
 	/** Prints a header for the current test with the test title and the given description.
 	 * @param title the title of the current test.
