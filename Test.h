@@ -81,9 +81,9 @@ private:
 	 */
 	int testPeekEmpty() const;
 
-	/** Tests the Queue's peekFront() method: behavior when the queue is empty, behavior when the queue is not empty, the queue is unchanged, the value at the front is returned correctly.
+	/** Tests whether peekFront() returns the value at the front correctly.
 	 * @pre Assume that enqueue() works properly when adding a single item to a new queue.
-	 * @return true if all subtests are passed, else false.
+	 * @return true if the value added is equal to the value peeked, else false.
 	 */
 	bool testPeekNotEmpty() const;
 
