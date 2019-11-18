@@ -70,3 +70,8 @@ void Test::printTestResult(bool isPassed) const
 		cout << "FAILED\n";
 	}
 }
+
+void Test::printError(string msg) const
+{
+	cout << "\tERROR: " << msg << '\n';
+}

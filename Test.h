@@ -66,6 +66,12 @@ private:
 	 * @post prints PASSED or FAILED based on the value of isPassed.
 	 */
 	void printTestResult(bool isPassed) const;
+
+	/** Prints the given error message to the console.
+	 * @param msg the body of the error message
+	 * @post prints a message to the console in the format: "ERROR: <msg>"
+	 */
+	void printError(string msg) const;
 };
 
 #endif
