@@ -14,11 +14,17 @@ Test::Test()
 
 void Test::runTests()
 {
+	// tests that depend only on the constructor
+	printTestHeader("Test dequeue() #1", "dequeueing from an empty queue");
+	int result = testDeQEmpty();
+	printTestResult(result == 1);
+
 	printTestHeader("Test isEmpty() #1", "new Queue evaluates as empty");
 	printTestResult(testIsEmpty1());
 
+	// tests that depend on other member methods
 	printTestHeader("Test peekFront() #1", "peek when queue is empty");
-	int result = testPeekEmpty();
+	result = testPeekEmpty();
 	printTestResult(result == 1);
 
 	printTestHeader("Test enqueue() #1", "entry value added correctly");
@@ -32,6 +38,9 @@ void Test::runTests()
 
 	printTestHeader("Test isEmpty() #2", "Queue containing 1 item");
 	printTestResult(testIsEmpty2());
+
+	printTestHeader("Test dequeue() #2", "removing 1 item");
+	printTestResult(testDeQRemove1());
 }
 
 bool Test::testIsEmpty1() const
