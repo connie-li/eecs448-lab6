@@ -220,10 +220,13 @@ bool Test::testDeQAll()
 void Test::printEnqueued() const
 {
 	Queue q;
+	cout << "\n\tEnqueue called on these values, in this order: ";
 	for(int i = 0; i < 5; i++)
 	{
 		q.enqueue(i);
+		cout << i << ' ';
 	}
+	cout << "\n\tItems in the queue are actually in this order: ";
 
 	for(int i = 0; i < 5; i++)
 	{
