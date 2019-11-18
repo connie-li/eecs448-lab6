@@ -26,8 +26,9 @@ public:
 	void runTests();
 
 private:
-	/** Tests whether the queue was constructed properly: if the queue's pointers exist, and the queue is empty.
-	 * @return true if all subtests are passed, else false.
+	/** Tests the Queue's isEmpty() method on a newly created queue.
+	 * @pre Assume that the newly constructed Queue should be empty.
+	 * @return true if isEmpty() returns true, else false.
 	 */
 	bool testConstruction() const;
 
