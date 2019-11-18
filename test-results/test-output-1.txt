@@ -1,0 +1,9 @@
+c817l905@cycle3:~/eecs448/l6-test$ ./QueueTest
+Test dequeue() #1: dequeueing from an empty queue: PASSED
+Test isEmpty() #1: new Queue evaluates as empty: PASSED
+Test peekFront() #1: peek when queue is empty: PASSED
+Test enqueue() #1: entry value added correctly: PASSED
+Test peekFront() #2: peek when queue contains 1 item: PASSED
+Test enqueue() #2: items always added to back: FAILED
+Test isEmpty() #2: Queue containing 1 item: PASSED
+Test dequeue() #2: removing 1 item: PASSED
