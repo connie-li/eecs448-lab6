@@ -57,6 +57,12 @@ private:
 	 */
 	bool testDequeue();
 
+	/** Tests the behavior of peekFront() when the queue is empty.
+	 * @pre Assume that isEmpty() works correctly.
+	 * @return 1 if a std::runtime_error is thrown, 2 if some other kind of error is thrown, or 3 if no error is thrown.
+	 */
+	int testPeekEmpty() const;
+
 	/** Tests the Queue's peekFront() method: behavior when the queue is empty, behavior when the queue is not empty, the queue is unchanged, the value at the front is returned correctly.
 	 * @return true if all subtests are passed, else false.
 	 */

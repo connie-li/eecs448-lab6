@@ -84,7 +84,25 @@ bool Test::testDequeue()
 
 }
 
-bool Test::testPeekFront() const
+int Test::testPeekEmpty() const
+{
+	Queue q;
+	int result = 3;
+	try
+	{
+		q.peekFront();
+	}
+	catch(runtime_error& e)
+	{
+		result = 1;
+	}
+	catch(...)
+	{
+		result = 2;
+	}
+
+	return(result);
+}
 {
 
 }
