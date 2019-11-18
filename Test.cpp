@@ -37,7 +37,24 @@ bool Test::testIsEmpty2()
 	return(!(q.isEmpty()));
 }
 
-bool Test::testEnqueue()
+bool Test::testEnQEntry()
+{
+	srand(time(NULL));
+	Queue q;
+	int random = rand() % 100 -50;
+	q.enqueue(random);
+	bool valueCorrect = false;
+	try
+	{
+		valueCorrect = (q.peekFront() == random);
+	}
+	catch(...)
+	{
+		printError("peekFront");
+	}
+	return(valueCorrect);
+}
+
 {
 
 }

@@ -9,6 +9,8 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 #include "Queue.h"
 using namespace std;
 
@@ -38,8 +40,11 @@ private:
 	 */
 	bool testIsEmpty2();
 
-	/** Tests the Queue's enqueue() method: Node is added to the back of the queue, Node added contains the correct data.
-	 * @return true if a Node was added, else false.
+	/** Tests whether enqueue() adds the correct entry data. Creates a new Queue, adds one item, then checks that item's data.
+	 * @pre Assume that enqueue() adds an item; assume that peekFront works properly.
+	 * @return true if the entry in the queue matches the argument given to enqueue, else false.
+	 */
+	bool testEnQEntry();
 	 */
 	bool testEnqueue();
 
