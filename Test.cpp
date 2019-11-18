@@ -90,7 +90,7 @@ bool Test::testEnQBack()
 	return(frontCorrect);
 }
 
-bool Test::testDeQEmpty()
+int Test::testDeQEmpty()
 {
 	Queue q;
 	int result = 3;
