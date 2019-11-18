@@ -1,0 +1,14 @@
+c817l905@cycle3:~/eecs448/l6-test$ ./QueueTest
+Test dequeue() #1: dequeueing from an empty queue: PASSED
+Test isEmpty() #1: new Queue evaluates as empty: PASSED
+Test peekFront() #1: peek when queue is empty: PASSED
+Test enqueue() #1: entry value added correctly: PASSED
+Test peekFront() #2: peek when queue contains 1 item: PASSED
+Test enqueue() #2: items always added to back: FAILED
+Test isEmpty() #2: Queue containing 1 item: PASSED
+Test dequeue() #2: removing 1 item: PASSED
+Test dequeue() #3: items always removed from the front: PASSED
+Test enqueue() #3: actual enqueue order:
+        Enqueue called on these values, in this order: 0 1 2 3 4
+        Items in the queue are actually in this order: 4 3 2 1 0
+Test dequeue #4: removing all items: PASSED
