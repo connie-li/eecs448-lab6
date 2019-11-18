@@ -41,12 +41,16 @@ private:
 	bool testIsEmpty2();
 
 	/** Tests whether enqueue() adds the correct entry data. Creates a new Queue, adds one item, then checks that item's data.
-	 * @pre Assume that enqueue() adds an item; assume that peekFront works properly.
+	 * @pre Assume that enqueue() adds an item; assume that peekFront() works properly.
 	 * @return true if the entry in the queue matches the argument given to enqueue, else false.
 	 */
 	bool testEnQEntry();
+
+	/** Tests whether enqueue() adds items to the back of the Queue. Creates a new queue, adds multiple items, then checks whether the first entry added is at the front.
+	 * @pre Assume that peekFront() works properly.
+	 * @return true if the value added first is at the front, else false.
 	 */
-	bool testEnqueue();
+	bool testEnQBack();
 
 	/** Tests the Queue's dequeue() method: behavior when the queue is empty, behavior when the queue is not empty; successful removal of the Node at the front.
 	 * @return true if all subtests are passed, else false.

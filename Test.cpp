@@ -55,8 +55,28 @@ bool Test::testEnQEntry()
 	return(valueCorrect);
 }
 
+bool Test::testEnQBack()
 {
+	srand(time(NULL));
+	Queue q;
+	int size = 5;
+	int* randVals = new int[size];
+	for(int i = 0; i < size; i++)
+	{
+		randVals[i] = rand() % 100 -50;
+		q.enqueue(randVals[i]);
+	}
 
+	bool frontCorrect = false;
+	try
+	{
+		frontCorrect = (q.peekFront() == randVals[0]);
+	}
+	catch(...)
+	{
+		printError("peekFront");
+	}
+	return(frontCorrect);
 }
 
 bool Test::testDequeue()
