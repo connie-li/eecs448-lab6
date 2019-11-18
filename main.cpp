@@ -8,11 +8,12 @@
 #include <iostream>
 #include <stdexcept>
 #include "Queue.h"
+#include "Test.h"
 
 int main()
 {
-	Queue q;
-	Test tester(q);
+	// Queue q;
+	Test tester;
 	tester.runTests();
 
 	return(0);
