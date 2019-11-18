@@ -17,14 +17,17 @@ void Test::runTests()
 
 }
 
-bool Test::testConstruction() const
+bool Test::testIsEmpty1() const
 {
-
+	Queue q;
+	return(q.isEmpty());
 }
 
-bool Test::testIsEmpty() const
+bool Test::testIsEmpty2()
 {
-
+	Queue q;
+	q.enqueue(0);
+	return(!(q.isEmpty()));
 }
 
 bool Test::testEnqueue()

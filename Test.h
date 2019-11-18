@@ -30,12 +30,13 @@ private:
 	 * @pre Assume that the newly constructed Queue should be empty.
 	 * @return true if isEmpty() returns true, else false.
 	 */
-	bool testConstruction() const;
+	bool testIsEmpty1() const;
 
-	/** Tests the Queue's isEmpty() method: returns the correct value when the queue is empty or not empty.
-	 * @return true if all subtests are passed, else false.
+	/** Tests the Queue's isEmpty() method on a queue containing 1 item.
+	 * @pre Assume that the enqueue() adds an item properly.
+	 * @return true if isEmpty() returns false, else false.
 	 */
-	bool testIsEmpty() const;
+	bool testIsEmpty2();
 
 	/** Tests the Queue's enqueue() method: Node is added to the back of the queue, Node added contains the correct data.
 	 * @return true if a Node was added, else false.
