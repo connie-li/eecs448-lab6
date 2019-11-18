@@ -76,6 +76,7 @@ bool Test::testEnQBack()
 	{
 		printError("peekFront");
 	}
+	delete[] randVals;
 	return(frontCorrect);
 }
 
