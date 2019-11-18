@@ -14,7 +14,14 @@ Test::Test()
 
 void Test::runTests()
 {
+	bool prevPassed = false;
+	printTestHeader("Test isEmpty() #1", "does a new Queue evaluate as empty?");
+	prevPassed = testIsEmpty1();
+	printTestResult(prevPassed);
 
+	printTestHeader("Test isEmpty() #2", "Queue containing 1 item");
+	prevPassed = testIsEmpty2();
+	printTestResult(prevPassed);
 }
 
 bool Test::testIsEmpty1() const
