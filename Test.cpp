@@ -191,6 +191,32 @@ bool Test::testDeQFront()
 
 	return(front == 3);
 }
+
+bool Test::testDeQAll()
+{
+	Queue q;
+	for(int i = 0; i < 5; i++)
+	{
+		q.enqueue(i);
+	}
+
+	bool succeeded = true;
+	for(int i = 0; i < 5; i++)
+	{
+		try
+		{
+			q.dequeue();
+		}
+		catch(...)
+		{
+			printError("dequeue error on index " + to_string(i));
+			succeeded = false;
+		}
+	}
+
+	return(succeeded);
+}
+
 void Test::printEnqueued() const
 {
 	Queue q;
