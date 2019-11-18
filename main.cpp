@@ -12,7 +12,6 @@
 
 int main()
 {
-	// Queue q;
 	Test tester;
 	tester.runTests();
 

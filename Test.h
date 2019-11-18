@@ -18,7 +18,6 @@ class Test
 {
 public:
 	/** Constructor
-	 * @post initializes m_size to 0.
 	 */
 	Test();
 
